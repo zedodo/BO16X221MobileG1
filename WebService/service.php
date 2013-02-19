@@ -66,6 +66,13 @@
 
                 echo json_encode($parsed);
             }
+            //MAJ GEOLOC
+            else if ($type == 'majGeoloc' && array_key_exists('groupe', $extraction) && array_key_exists('longitude', $extraction) && array_key_exists('latitude', $extraction))
+            {
+                $query = 'update Groupe set latitudeGroupe = ' . $conn->quote($extraction['latitude']) . ', longitudeGroupe = ' . $conn->quote($extraction['longitude']) . ' where idGroupe = ' . $conn->quote($extraction['groupe']);
+
+                $res = $conn->exec($query);
+            }
 
         } catch (PDOException $e) {
         }
