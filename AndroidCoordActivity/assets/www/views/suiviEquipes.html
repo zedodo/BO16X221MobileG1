@@ -6,19 +6,40 @@
 <script type="text/javascript" charset="utf-8" src="jquery.min.js"></script>
 <script type="text/javascript" charset="utf-8"
 	src="jquery.mobile-1.2.0.js"></script>
-	<script type="text/javascript">$.ajax({
-  type: "GET",
-  url: "http://bo16x221mobileg1.dx.am/service.php?type=listeGroupes&params=enquete-1",
-  dataType: "script"
-}).done(function(msg) {
-  $(".listeGroupes").html( msg );
-});;
-</script>
-<script type="text/javascript" charset="utf-8" src="cordova-1.5.0.js"></script>
+	
+<script type="text/javascript" charset="utf-8" src="cordova-2.4.0.js"></script>
 <meta http-equiv="Content-type" content="text/html" charset="utf-8" />
 </head>
 <body>
+<div id="groupesListPage" data-role="page">
+<script type="text/javascript">$.ajax({
+  type: "GET",
+  url: "http://bo16x221mobileg1.dx.am/service.php?type=listeGroupes&params=enquete-1",
+  dataType: "JSON"
+}).done(function(msg) {
+  $("#listeGroupes").html( msg );
+});
 
+var serviceURL = "http://bo16x221mobileg1.dx.am/service.php?type=listeGroupes&params=enquete-";
+
+var enquete = 1;
+
+var groupes;
+
+$('#groupesListPage').bind('pageinit', function(event) {
+	getGroupesList();
+});
+
+function getGroupesList() {
+	$getJSON(serviceURL + enquete, function(data) {
+		$('#listeGroupes li').remove();
+		groupes = data.items;
+		$.each(groupes, function(index, groupe) {
+			$('#listeGroupes').append('<li>employee.nomGroupe</li>');
+		});
+	});
+}
+</script>
 <ul data-role="listview">
     <li><a href="listeEtapesGroupe.html" data-transition="slidefade" data-inline="true">Groupe 1</a></li>
     <li><a href="listeEtapesGroupe.html" data-transition="slidefade" data-inline="true">Groupe 2</a></li>
@@ -26,5 +47,6 @@
     <li><a href="listeEtapesGroupe.html" data-transition="slidefade" data-inline="true">Groupe 4</a></li>
     <li><a href="listeEtapesGroupe.html" data-transition="slidefade" data-inline="true">Groupe N</a></li>
 </ul>
-<div id="listeGroupes">toto</div>
+<ul id="listeGroupes" ></ul>
+</div>
 </body>
