@@ -73,6 +73,11 @@
 
                 $res = $conn->exec($query);
             }
+            //PHPINFO
+            else if ($type == 'phpinfo')
+            {
+                phpinfo();
+            }
 
         } catch (PDOException $e) {
         }

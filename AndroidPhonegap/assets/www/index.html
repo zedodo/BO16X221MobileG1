@@ -3,11 +3,16 @@
 <head>
 <title>PhoneGap</title>
 <link rel="stylesheet" type="text/css" href="jquery.mobile-1.2.0.css" />
+<script type="text/javascript" charset="utf-8" src="cordova-2.4.0.js"></script>
 <script type="text/javascript" charset="utf-8" src="jquery.min.js"></script>
 <script type="text/javascript" charset="utf-8" src="jquery.mobile-1.2.0.js"></script>
-<script type="text/javascript" charset="utf-8" src="cordova-1.5.0.js"></script>
 <script type="text/javascript" charset="utf-8" src="GCMPlugin.js"></script>
 <script type="text/javascript" charset="utf-8" src="CORDOVA_GCM_script.js"></script>
+
+<script type="text/javascript" charset="utf-8">
+	$('#PUTAINBUTTON').text('BITCH');
+</script>
+
 <meta http-equiv="Content-type" content="text/html" charset="utf-8" />
 
 </head>
@@ -19,6 +24,9 @@
 		<h1>Hello PhoneGap</h1>
 		<a href="chargement.html" data-role="button" data-theme="a">Récupérer l'ordre de mission</a>
 		<a href="debutInstructions.html" data-role="button" data-theme="a">Commencer l'enquête</a>
+
+		<div id="app-status-ul">
+		</div>
 	</div>
 	
 	<script type="text/javascript">
