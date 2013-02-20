@@ -18,11 +18,11 @@ function appareilPret(){
 			maximumAge : 5000
 	};
 	
-	navigator.geolocation.watchPosition(succesCallbackSucces, succesCallback, geolocOptions);
+	navigator.geolocation.watchPosition(succesCallback, erreurCallback, geolocOptions);
 }
 
 
-function succesCallbackSucces(position) {
+function succesCallback(position) {
 	var latLng = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
 	
 	//google.maps.Marker.setMap(null);
@@ -35,7 +35,7 @@ function succesCallbackSucces(position) {
 }
 
 
-function succesCallback(error) {
+function erreurCallback(error) {
     alert('code: '    + error.code    + '\n' +
           'message: ' + error.message + '\n');
 }
