@@ -7,29 +7,210 @@
 <link rel="stylesheet" type="text/css" href="css/eventXIAgency.css" />
 <meta http-equiv="Content-type" content="text/html" charset="utf-8" />
 </head>
-<body data-role="page">
-	<div data-role="header">
-		<h1>Appli Coordonnateur</h1>
-<div data-role="content" data-theme="a">
-		<a onclick="window.open('views/localisationEquipes.html')"
-			data-role="button" data-transition="pop">Localisation des équipes</a>
-		<a href="views/suiviEquipes.html" data-role="button" data-theme="a"
-			data-transition="pop">Suivi des équipes</a> <a
-			href="views/validationEtapes.html" data-role="button" data-theme="a"
-			data-rel="dialog" data-transition="pop">Validation des étapes
-			[Dialog - affichage test]</a> <a href="views/finEnquete.html"
-			data-role="button" data-theme="a" data-transition="pop">Fin d'enquête</a> <a
-			href="views/bilanFinal.html" data-role="button" data-theme="a" data-transition="pop">Bilan
-			final</a>
+<body>
+	<div data-role="page" id="index">
+		<div data-role="header">
+			<h1>Appli Coordonnateur</h1>
+		</div>
 
-		<script type="text/javascript" charset="utf-8"
-			src="libs/jquery.min.js"></script>
-		<script type="text/javascript" charset="utf-8"
-			src="libs/jquery.mobile-1.2.0.js"></script>
-		<script type="text/javascript" charset="utf-8"
-			src="libs/cordova-2.4.0.js"></script>
-			</div>
-			<div data-role="footer"></div>
+
+		<div data-role="content" data-theme="a">
+			<a href="#localisationEquipes"
+				data-role="button" data-theme="a" data-transition="pop">Localisation des
+				équipes</a> <a href="#suiviEquipes" data-role="button"
+				data-theme="a" data-transition="pop">Suivi des équipes</a> <a
+				href="#validationEtapes" data-role="button" data-theme="a"
+				data-rel="dialog" data-transition="pop">Validation des étapes
+				[Dialog - affichage test]</a> <a href="#finEnquete"
+				data-role="button" data-theme="a" data-transition="pop">Fin
+				d'enquête</a> <a href="#bilanFinal" data-role="button"
+				data-theme="a" data-transition="pop">Bilan final</a>
+
+			<script type="text/javascript" charset="utf-8"
+				src="libs/jquery.min.js"></script>
+			<script type="text/javascript" charset="utf-8"
+				src="libs/jquery.mobile-1.2.0.js"></script>
+			<script type="text/javascript" charset="utf-8"
+				src="libs/cordova-2.4.0.js"></script>
+		</div>
+		<div data-role="footer"></div>
 	</div>
+
+	<div data-role="page" id="bilanFinal">
+		<div data-role="header"></div>
+		<div data-role="content" data-theme="a">
+			<ul data-role="listview">
+				<li><a href="#bilanGroupe" data-theme="a" data-transition="slidefade"
+					data-inline="true">Groupe 3 | Score : 10000</a></li>
+				<li><a href="#bilanGroupe" data-theme="a" data-transition="slidefade"
+					data-inline="true">Groupe 1 | Score : 1000</a></li>
+				<li><a href="#bilanGroupe" data-theme="a" data-transition="slidefade"
+					data-inline="true">Groupe N | Score : 100</a></li>
+				<li><a href="#bilanGroupe" data-theme="a" data-transition="slidefade"
+					data-inline="true">Groupe 2 | Score : 10</a></li>
+				<li><a href="#bilanGroupe" data-theme="a" data-transition="slidefade"
+					data-inline="true">Groupe 4 | Score : 1</a></li>
+			</ul>
+		</div>
+		<div data-role="footer"></div>
+	</div>
+
+	<div data-role="page" id="bilanGroupe">
+
+		<div data-role="header"></div>
+
+		<div data-role="content" data-theme="a" >
+			<div data-role="collapsible-set">
+				<div data-role="collapsible">
+					<h3>Etape 1</h3>
+					<ul data-role="listview">
+						<li>Instruction 1</li>
+						<li>Instruction 2</li>
+						<li>Instruction 3</li>
+						<li>Instruction N</li>
+					</ul>
+				</div>
+				<div data-role="collapsible">
+					<h3>Etape 2</h3>
+					<ul data-role="listview">
+						<li>Instruction 1</li>
+						<li>Instruction 2</li>
+						<li>Instruction 3</li>
+						<li>Instruction N</li>
+					</ul>
+				</div>
+				<div data-role="collapsible">
+					<h3>Etape 3</h3>
+					<ul data-role="listview">
+						<li>Instruction 1</li>
+						<li>Instruction 2</li>
+						<li>Instruction 3</li>
+						<li>Instruction N</li>
+					</ul>
+				</div>
+				<div data-role="collapsible">
+					<h3>Etape 4</h3>
+					<ul data-role="listview">
+						<li>Instruction 1</li>
+						<li>Instruction 2</li>
+						<li>Instruction 3</li>
+						<li>Instruction N</li>
+					</ul>
+				</div>
+				<div data-role="collapsible">
+					<h3>Etape N</h3>
+					<ul data-role="listview">
+						<li>Instruction 1</li>
+						<li>Instruction 2</li>
+						<li>Instruction 3</li>
+						<li>Instruction N</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+
+		<div data-role="footer"></div>
+
+	</div>
+
+	<div data-role="page" id="finEnquete">
+		<div data-role="header"></div>
+		<div data-role="content"></div>
+		<div data-role="footer"></div>
+	</div>
+
+	<div data-role="page" id="listeEtapesGroupe">
+		<div data-role="header"></div>
+		<div data-role="content" data-theme="a" >
+			<div data-role="collapsible-set">
+				<div data-role="collapsible">
+					<h3>Etape 1</h3>
+					<ul data-role="listview">
+						<li>Instruction 1</li>
+						<li>Instruction 2</li>
+						<li>Instruction 3</li>
+						<li>Instruction N</li>
+					</ul>
+				</div>
+				<div data-role="collapsible">
+					<h3>Etape 2</h3>
+					<ul data-role="listview">
+						<li>Instruction 1</li>
+						<li>Instruction 2</li>
+						<li>Instruction 3</li>
+						<li>Instruction N</li>
+					</ul>
+				</div>
+				<div data-role="collapsible">
+					<h3>Etape 3</h3>
+					<ul data-role="listview">
+						<li>Instruction 1</li>
+						<li>Instruction 2</li>
+						<li>Instruction 3</li>
+						<li>Instruction N</li>
+					</ul>
+				</div>
+				<div data-role="collapsible">
+					<h3>Etape 4</h3>
+					<ul data-role="listview">
+						<li>Instruction 1</li>
+						<li>Instruction 2</li>
+						<li>Instruction 3</li>
+						<li>Instruction N</li>
+					</ul>
+				</div>
+				<div data-role="collapsible">
+					<h3>Etape N</h3>
+					<ul data-role="listview">
+						<li>Instruction 1</li>
+						<li>Instruction 2</li>
+						<li>Instruction 3</li>
+						<li>Instruction N</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		<div data-role="footer"></div>
+	</div>
+
+	<div data-role="page" id="localisationEquipes">
+		<div data-role="header"></div>
+		<div data-role="content" data-theme="a" >
+			<script type="text/javascript" charset="utf-8"
+				src="http://maps.googleapis.com/maps/api/js?key=AIzaSyCo7bE_ev-M_HhWiWOkAVjKZndLa-zVbP0&sensor=true"></script>
+			<script type="text/javascript" charset="utf-8"
+				src="../libs/cordova-2.4.0.js"></script>
+			<script type="text/javascript" src="../js/googlemaps.js"></script>
+
+			<div id="map_canvas" style="width: 300px; height: 350px;"></div>
+		</div>
+		<div data-role="footer"></div>
+	</div>
+
+	<div data-role="page" id="suiviEquipes">
+		<div data-role="header"></div>
+		<div data-role="content" data-theme="a" >
+			<ul data-role="listview">
+				<li><a href="#listeEtapesGroupe"
+					data-transition="slidefade" data-inline="true">Groupe 1</a></li>
+				<li><a href="#listeEtapesGroupe"
+					data-transition="slidefade" data-inline="true">Groupe 2</a></li>
+				<li><a href="#listeEtapesGroupe"
+					data-transition="slidefade" data-inline="true">Groupe 3</a></li>
+				<li><a href="#listeEtapesGroupe"
+					data-transition="slidefade" data-inline="true">Groupe 4</a></li>
+				<li><a href="#listeEtapesGroupe"
+					data-transition="slidefade" data-inline="true">Groupe N</a></li>
+			</ul>
+		</div>
+		<div data-role="footer"></div>
+	</div>
+
+	<div data-role="page" id="validationEtapes">
+		<div data-role="header"></div>
+		<div data-role="content" data-theme="a" ></div>
+		<div data-role="footer"></div>
+	</div>
+
 </body>
 </html>
