@@ -1,8 +1,8 @@
-document.addEventListener("online", onDeviceReady, false);
+document.addEventListener("online", appareilPret, false);
 var map;
 
 
-function onDeviceReady(){
+function appareilPret(){
 	var mapOptions = {
 			zoom : 12,
 			center : new google.maps.LatLng(0, 0),
@@ -18,11 +18,11 @@ function onDeviceReady(){
 			maximumAge : 5000
 	};
 	
-	navigator.geolocation.watchPosition(onSuccess, onError, geolocOptions);
+	navigator.geolocation.watchPosition(succesCallbackSucces, succesCallback, geolocOptions);
 }
 
 
-function onSuccess(position) {
+function succesCallbackSucces(position) {
 	var latLng = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
 	
 	//google.maps.Marker.setMap(null);
@@ -35,7 +35,7 @@ function onSuccess(position) {
 }
 
 
-function onError(error) {
+function succesCallback(error) {
     alert('code: '    + error.code    + '\n' +
           'message: ' + error.message + '\n');
 }
