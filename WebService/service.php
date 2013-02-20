@@ -15,7 +15,7 @@
     if (isset($_GET['type']) && isset($_GET['params']))
 	{
         $type = $_GET['type'];
-        $params = explode('-', $_GET['params']);
+        $params = explode('*', $_GET['params']);
         $count = count($params);
         $extraction = array();
 
