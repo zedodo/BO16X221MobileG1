@@ -1,8 +1,9 @@
 <!DOCTYPE HTML>
 <html>
 	<head>
-		<title>Title</title>
+		<title>Event XI Agency</title>
 		<link rel="stylesheet" type="text/css" href="../css/jquery.mobile-1.2.0.css" />
+		<link rel="stylesheet" type="text/css" href="../css/eventXIAgency.css" />
 		<meta http-equiv="Content-type" content="text/html" charset="utf-8" />
 		<meta name = "viewport" content = "user-scalable=no,width=device-width" />
 	</head>
@@ -39,6 +40,108 @@
 			</div>
 			
 		</div>	
+		
+			<div data-role="page" id="chargement">
+		<div data-role="header">
+			<img alt="logoXI" src="">
+			<h1>Accueil</h1>
+		</div>
+		<div data-role="content" data-theme="a">Chargement ...</div>
+		<div data-role="footer">Powered by Envent XI Agency</div>
+	</div>
+
+	<div data-role="page" id="debutInstructions">
+		<div data-role="header">
+			<img alt="logoXI" src="">
+			<h1>Début</h1>
+		</div>
+		<div data-role="content" data-theme="a">
+			<div id="debutInstructions">
+				<img alt="imageEspion" src="">
+				<p id="bulleInstructions">Lorem ipsum</p>
+			</div>
+			<a data-role="button" href="#debutSucces" data-theme="a">Vérifier
+				position</a>
+		</div>
+		<div data-role="footer">...</div>
+	</div>
+
+	<div data-role="page" id="debutSucces">
+		<div data-role="header">
+			<img alt="logoXI" src="">
+			<h1>Début</h1>
+		</div>
+		<div data-role="content" data-theme="a">
+			<div id="debutInstructions">
+				<h1>Succès !</h1>
+				<p id="tesxteExplicatif">Lorem ipsum Lorem ipsum Lorem ipsum
+					Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem
+					ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+					Lorem ipsum</p>
+			</div>
+			<a data-role="button" href="#etapeInstructionsManuel"
+				data-theme="a">Etape suivante (manuel)</a> <a data-role="button"
+				href="#etapeInstructionsAutomatique" data-theme="a">Etape
+				suivante (automatique)</a>
+		</div>
+		<div data-role="footer">...</div>
+	</div>
+
+
+	<div data-role="page" id="finEchec">
+		<div data-role="header">
+			<img alt="logoEspion" src="">
+			<h1>Fin de l'enquête</h1>
+		</div>
+		<div data-role="content" data-theme="a">
+			<h1>Vous n'avez pas été assez rapide. L'enquête est terminée; la
+				vérité restera à jamais masquée pour vous ...</h1>
+			<p>Lorem ipsum</p>
+			<a data-role="button" href="#resultats" data-theme="a">Résultats</a>
+		</div>
+
+		<div data-role="footer">...</div>
+	</div>
+
+	<div data-role="page" id="finSucces">
+		<div data-role="header">
+			<img alt="logoEspion" src="">
+			<h1>Fin de l'enquête</h1>
+		</div>
+		<div data-role="content" data-theme="a">
+			<h1>Vous avez résolu le mystère ! Félicitations !</h1>
+			<p>Lorem ipsum</p>
+			<a data-role="button" href="#resultats" data-theme="a">Résultats</a>
+		</div>
+
+		<div data-role="footer">...</div>
+	</div>
+
+	<div data-role="page" id="resultats">
+		<div data-role="header">
+			<img alt="logoXI" src="">
+			<h1>Résultats</h1>
+		</div>
+		<div data-role="content" data-theme="a">
+
+			<h1>XXXXX point(s)</h1>
+			<p>Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+				Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem
+				ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+				Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem
+				ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+				Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem
+				ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+				Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem
+				ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+				Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem
+				ipsum Lorem ipsum Lorem ipsum Lorem ipsum</p>
+
+
+		</div>
+		<div data-role="footer">...</div>
+	</div>
+		
 		
 		<script type="text/javascript" charset="utf-8" src="../libs/cordova-2.4.0.js"></script>
 		<script type="text/javascript" charset="utf-8" src="../libs/jquery.min.js"></script>
