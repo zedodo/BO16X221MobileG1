@@ -13,6 +13,5 @@ $('#pageEtape').live('pagebeforeshow', function(event, data) {
 	  error: function(a, b, c) {
 	  	alert(a);
 	  }
-
 	
 });
