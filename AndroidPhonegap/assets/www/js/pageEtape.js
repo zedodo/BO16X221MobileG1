@@ -11,5 +11,4 @@ $('#pageEtape').live('pagebeforeshow', function(event, data) {
 	  	alert('error' + a + ' ' + b + ' ' + c);
 	  }
 	  });
-	
 });
