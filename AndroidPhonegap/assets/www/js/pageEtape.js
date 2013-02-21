@@ -1,3 +1,4 @@
+var etape = null;
 $('#pageEtape').live('pagebeforeshow', function(event, data) {
 
 	$.ajax({
@@ -6,6 +7,7 @@ $('#pageEtape').live('pagebeforeshow', function(event, data) {
 	  dataType: "json",
 	  success: function(msg) {
 	  	alert('success');
+	  	etape = msg;
 	  },
 	  error: function(a, b, c) {
 	  	alert('error' + a + ' ' + b + ' ' + c);

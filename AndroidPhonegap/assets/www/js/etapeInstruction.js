@@ -17,9 +17,12 @@ $('#pageInstruction').live('pagebeforeshow', function(event, data) {
 	  });*/	
 			
 	alert('toto');
+	alert(etape);
+	alert(etape.nomEtape);
+	alert(etape.instructionEtape);
 	
 	var parsed = jQuery.parseJSON(etape.instructionEtape);
-	alert(etape.instructionEtape);
+	
 
 	alert(parsed);
 	
