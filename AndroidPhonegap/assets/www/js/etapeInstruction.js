@@ -1,6 +1,6 @@
 $('#pageInstruction').live('pagebeforeshow', function(event, data) {
 			
-	var nom = 'Nom';
+	/*var nom = 'Nom';
 	var descriptif = 'Descriptif';
 	var instruction = '["instruction 1", "instruction 2", "instruction 3"]';
 			
@@ -14,20 +14,17 @@ $('#pageInstruction').live('pagebeforeshow', function(event, data) {
 	  error: function(a, b, c) {
 	  	alert('error');
 	  }
-	  });			
+	  });*/	
 			
-	/*alert('toto');
+	alert('toto');
 	
 	var parsed = jQuery.parseJSON(etape.instructionEtape);
 	alert(etape.instructionEtape);
 
 	alert(parsed);
 	
-			$.each(parsed, function(i, obj){
-				alert('each');
-				$('#listeInstruction').append('<li>'+ obj +'</li>');
-			});
-			
-			*/
-
+	$.each(parsed, function(i, obj){
+		alert('each');
+		$('#listeInstruction').append('<li>'+ obj +'</li>');
+	});
 });
