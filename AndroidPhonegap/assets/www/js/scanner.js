@@ -13,7 +13,7 @@ $('#pageScanner').live('pagebeforeshow', function(event, data) {
 	        		"Format: " + result.format + "<br/>");
 	    }, function(error) {
 	        //alert("Echec du scan: " + error);
-	    	alert('Echec du scan');
+	    	$("#pageScannerContent").html("Echec du scan");
 	    }
 	);
 });
