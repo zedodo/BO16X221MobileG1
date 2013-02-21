@@ -48,12 +48,12 @@
                 if (count($res) > 0)
                     $res = $res[0];
 
-                /*if ($res != null)
-                    echo json_encode(array_map('utf8_encode', $res));*/
+                if ($res != null)
+                    echo json_encode(array_map('utf8_encode', $res));
 
-                $test = utf8_encode('coucou');
-                
-                echo json_encode($test);
+                /*$test = utf8_encode('coucou');
+
+                echo json_encode($test);*/
             }
             //LISTE GROUPES
             else if ($type == 'listeGroupes' && array_key_exists('enquete', $extraction))
@@ -80,6 +80,7 @@
             //PHPINFO
             else if ($type == 'phpinfo')
             {
+                echo $conn->quote('["MOTHER FUCKERS", "ENCULES DE FILS DE CHIENNE", "ALLEZ TOUS BIEN VOUS FAIRE FOUTRE ENCORE ET ENCORE"]');
                 phpinfo();
             }
             else if ($type == 'ajoutEtape' && array_key_exists('nom', $extraction)  && array_key_exists('descriptif', $extraction) && array_key_exists('instruction', $extraction) && array_key_exists('scenario', $extraction))
