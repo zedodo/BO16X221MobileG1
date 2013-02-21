@@ -1,18 +1,15 @@
-//alert('scan');
 $('#pageScanner').live('pagebeforeshow', function(event, data) {
 
-	//alert('scan');
 	window.plugins.barcodeScanner.scan( function(result) {
-	        /*alert("We got a barcode\n" +
-	                  "Result: " + result.text + "\n" +
-	                  "Format: " + result.format + "\n" +
-	                  "Cancelled: " + result.cancelled);*/
-	        
+	
 	        $("#pageScannerContent").html("Vous avez scann&eacute; :<br/>" + 
 	        		"Resultat: " + result.text + "<br/>" +
-	        		"Format: " + result.format + "<br/>");
+	        		"Format: " + result.format + "<br/>" +
+	        		"<br/>Etape valid&eacute;e.");
+	        		
+	        GCM_Send(result.text, 1);
+	        
 	    }, function(error) {
-	        //alert("Echec du scan: " + error);
 	    	$("#pageScannerContent").html("Echec du scan");
 	    }
 	);

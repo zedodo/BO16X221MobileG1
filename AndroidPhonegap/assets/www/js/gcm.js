@@ -30,7 +30,7 @@ function GCM_Event(e)
 	      alert('regid : ' + e.regid);
 	      $.ajax({ 
 				type: "GET",
-				url: "http://bo16x221mobileg1.dx.am/service.php?type=gcmRegistration&params=groupe*1*id*"+e.regid, 
+				url: "http://bo16x221mobileg1.foreverhost.us/service.php?type=gcmRegistration&params=groupe*1*id*"+e.regid, 
 				dataType: "json"
 			}).done(function(msg){});
 	    }
@@ -62,3 +62,13 @@ function GCM_Fail(e)
   alert('error : ' + e.msg);
 }
 
+function GCM_Send(msg, groupe)
+{
+  alert('bleg');
+  $.ajax({  type: "GET",
+			url: "http://bo16x221mobileg1.foreverhost.us/service.php?type=gcmNotification&params=groupe*"+groupe+"*notification*"+msg, 
+			dataType: "json"
+			}).done(function(msg){
+			  	alert('bleh ' + msg);
+			  });
+}

@@ -81,6 +81,23 @@
             {
                 phpinfo();
             }
+            else if ($type == 'curlTest')
+            {
+                echo file_get_contents("http://www.google.com/");
+
+
+                $ch = curl_init();
+                curl_setopt($ch, CURLOPT_URL, "http://www.google.com/");
+                curl_setopt($ch, CURLOPT_HEADER, 0);
+                curl_setopt($ch, CURLOPT_FOLLOWLOCATION, 1);
+                curl_setopt($ch, CURLOPT_PROTOCOLS, CURLPROTO_HTTP);
+                curl_setopt($ch, CURLOPT_IPRESOLVE, CURL_IPRESOLVE_V4 );
+                curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, FALSE);
+                var_dump(curl_getinfo($ch));
+                echo '<br />'.curl_exec($ch).'<br />';
+                echo curl_error($ch).'<br />';;
+                curl_close($ch);
+            }
             //AJOUT ETAPE
             else if ($type == 'ajoutEtape' && array_key_exists('nom', $extraction)  && array_key_exists('descriptif', $extraction) && array_key_exists('instruction', $extraction) && array_key_exists('scenario', $extraction))
             {
@@ -98,13 +115,15 @@
             //ENVOI NOTIFICATION GCM
             else if ($type == 'gcmNotification' && array_key_exists('groupe', $extraction) && array_key_exists('notification', $extraction))
             {
-                $query = 'select g.* fron Groupe g where g.idGroupe = '. $conn->quote($extraction['groupe']);
+                $query = 'select g.* from Groupe g where g.idGroupe = '. $conn->quote($extraction['groupe']);
 
                 $res = $conn->query($query)->fetchAll(PDO::FETCH_ASSOC);
 
                 if (count($res) > 0)
                 {
                     $registrationId = $res[0]['registrationIdGroupe'];
+
+                    echo $registrationId;
 
                     if (isset($registrationId) && $registrationId != null && $registrationId != '')
                     {
@@ -135,6 +154,8 @@
                         curl_setopt($ch, CURLOPT_POSTFIELDS, json_encode($fields));
 
                         $result = curl_exec($ch);
+
+                        echo curl_error($ch);
 
                         curl_close($ch);
                         //echo $result;

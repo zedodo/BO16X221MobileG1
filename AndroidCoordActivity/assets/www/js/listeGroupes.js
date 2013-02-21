@@ -1,7 +1,7 @@
 $('#suiviEquipes').live('pagebeforeshow', function(event, data) {
 	$.ajax({
 		  type: "GET",
-		  url: "http://bo16x221mobileg1.dx.am/service.php?type=listeGroupes&params=enquete*1",
+		  url: "http://bo16x221mobileg1.foreverhost.us/service.php?type=listeGroupes&params=enquete*1",
 		  dataType: "json"
 		}).done(function(groupes) {
 			$('#tousGroupes li').remove();

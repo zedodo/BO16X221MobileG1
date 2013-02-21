@@ -23,7 +23,7 @@
       <file leaf-file-name="service.php" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/service.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="91" column="46" selection-start="3549" selection-end="3564" vertical-scroll-proportion="0.43400714">
+            <state line="158" column="0" selection-start="6622" selection-end="6622" vertical-scroll-proportion="0.77764565">
               <folding />
             </state>
           </provider>
@@ -51,7 +51,9 @@
         <entry file="file://$PROJECT_DIR$/gcm.php">
           <provider selected="true" editor-type-id="text-editor">
             <state line="51" column="26" selection-start="510" selection-end="1687" vertical-scroll-proportion="-29.423077">
-              <folding />
+              <folding>
+                <marker date="1361454326970" expanded="true" signature="118:128" placeholder="..." />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -275,7 +277,9 @@
     <entry file="file://$PROJECT_DIR$/gcm.php">
       <provider selected="true" editor-type-id="text-editor">
         <state line="8" column="0" selection-start="119" selection-end="119" vertical-scroll-proportion="0.0">
-          <folding />
+          <folding>
+            <marker date="1361454326970" expanded="true" signature="118:128" placeholder="..." />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -303,7 +307,9 @@
     <entry file="file://$PROJECT_DIR$/gcm.php">
       <provider selected="true" editor-type-id="text-editor">
         <state line="8" column="0" selection-start="119" selection-end="119" vertical-scroll-proportion="0.0">
-          <folding />
+          <folding>
+            <marker date="1361454326970" expanded="true" signature="118:128" placeholder="..." />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -366,13 +372,15 @@
     <entry file="file://$PROJECT_DIR$/gcm.php">
       <provider selected="true" editor-type-id="text-editor">
         <state line="51" column="26" selection-start="510" selection-end="1687" vertical-scroll-proportion="-29.423077">
-          <folding />
+          <folding>
+            <marker date="1361454326970" expanded="true" signature="118:128" placeholder="..." />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/service.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="91" column="46" selection-start="3549" selection-end="3564" vertical-scroll-proportion="0.43400714">
+        <state line="158" column="0" selection-start="6622" selection-end="6622" vertical-scroll-proportion="0.77764565">
           <folding />
         </state>
       </provider>

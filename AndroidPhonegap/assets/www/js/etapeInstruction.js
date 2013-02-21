@@ -6,7 +6,7 @@ $('#pageInstruction').live('pagebeforeshow', function(event, data) {
 			
 	$.ajax({
 	  type: "GET",
-	  url: "http://bo16x221mobileg1.dx.am/service.php?type=ajoutEtape&params=scenario*1*nom*"+nom+"*descriptif*"+descriptif+"*instruction*"+instruction,
+	  url: "http://bo16x221mobileg1.foreverhost.us/service.php?type=ajoutEtape&params=scenario*1*nom*"+nom+"*descriptif*"+descriptif+"*instruction*"+instruction,
 	  dataType: "json",
 	  success: function(msg) {
 	  	alert('success');

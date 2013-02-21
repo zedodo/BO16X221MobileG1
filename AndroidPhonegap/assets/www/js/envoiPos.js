@@ -17,7 +17,7 @@ function successCallback(position) {
 	
 	$.ajax({ 
 		type: "GET",
-		url: "http://bo16x221mobileg1.dx.am/service.php?type=majGeoloc&params=groupe*2*latitude*"+lat+"*longitude*"+lgt, 
+		url: "http://bo16x221mobileg1.foreverhost.us/service.php?type=majGeoloc&params=groupe*2*latitude*"+lat+"*longitude*"+lgt, 
 		dataType: "json"
 	}).done(function(msg){});
 }
