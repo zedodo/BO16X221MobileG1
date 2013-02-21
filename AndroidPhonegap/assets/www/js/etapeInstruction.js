@@ -16,18 +16,18 @@ $('#pageInstruction').live('pagebeforeshow', function(event, data) {
 	  }
 	  });*/	
 			
-	alert('toto');
+	/*alert('toto');
 	alert(etape);
 	alert(etape.nomEtape);
-	alert(etape.instructionEtape);
+	alert(etape.instructionEtape);*/
 	
 	var parsed = jQuery.parseJSON(etape.instructionEtape);
 	
 
-	alert(parsed);
+	//alert(parsed);
 	
 	$.each(parsed, function(i, obj){
-		alert('each');
-		$('#listeInstruction').append('<li>'+ obj +'</li>');
+		//alert('each');
+		$('#listeInstruction').append('<li> - '+ obj +'</li>');
 	});
 });
