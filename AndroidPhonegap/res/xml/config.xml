@@ -56,6 +56,7 @@
     <plugin name="Globalization" value="org.apache.cordova.Globalization"/>
     <plugin name="InAppBrowser" value="org.apache.cordova.InAppBrowser"/>
     <plugin name="GCMPlugin" value="com.plugin.GCM.GCMPlugin" />
+    <plugin name="BarcodeScanner" value="com.phonegap.plugins.barcodescanner.BarcodeScanner"/>
 </plugins>
 </cordova>
 

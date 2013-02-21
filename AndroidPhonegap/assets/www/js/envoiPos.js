@@ -1,7 +1,7 @@
 $('#pageIndex').live('pageinit', function(event, data) {appareilPret();});
 
 function appareilPret(){
-	alert("start geoloc");
+	//alert("start geoloc");
 	var geolocOptions = {
 			frequency : 3000,
 			enableHighAccuracy : true,
