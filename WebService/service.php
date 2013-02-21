@@ -37,9 +37,8 @@
             {
                 /*
                  * 0 = pas fait
-                 * 1 = en cours
-                 * 2 = réussie
-                 * 3 = échouée
+                 * 1 = réussie
+                 * 2 = échouée
                  */
                 $query = 'select e.* from Etape e left join Ordre o on o.Etape_idEtape = e.idEtape where o.Groupe_idGroupe = ' . $conn->quote($extraction['groupe']) . ' and o.etatEtapeOrdre = \'0\' order by o.positionEtapeOrdre asc';
 
@@ -80,14 +79,69 @@
             //PHPINFO
             else if ($type == 'phpinfo')
             {
-                echo $conn->quote('["MOTHER FUCKERS", "ENCULES DE FILS DE CHIENNE", "ALLEZ TOUS BIEN VOUS FAIRE FOUTRE ENCORE ET ENCORE"]');
                 phpinfo();
             }
+            //AJOUT ETAPE
             else if ($type == 'ajoutEtape' && array_key_exists('nom', $extraction)  && array_key_exists('descriptif', $extraction) && array_key_exists('instruction', $extraction) && array_key_exists('scenario', $extraction))
             {
                 $query = 'insert into Etape (nomEtape, descriptifEtape, instructionEtape, Scenario_idScenario) values (' . $conn->quote($extraction['nom']) . ', ' . $conn->quote($extraction['descriptif']) . ', ' . $conn->quote($extraction['instruction']) . ', ' . $conn->quote($extraction['scenario']) . ');';
 
                 $res = $conn->exec($query);
+            }
+            //REGISTRATION ID GCM
+            else if ($type == 'gcmRegistration' && array_key_exists('groupe', $extraction) && array_key_exists('id', $extraction))
+            {
+                $query = 'update Groupe set registrationIdGroupe = ' . $conn->quote($extraction['id']) . ' where idGroupe = ' . $conn->quote($extraction['groupe']);
+
+                $res = $conn->exec($query);
+            }
+            //ENVOI NOTIFICATION GCM
+            else if ($type == 'gcmNotification' && array_key_exists('groupe', $extraction) && array_key_exists('notification', $extraction))
+            {
+                $query = 'select g.* fron Groupe g where g.idGroupe = '. $conn->quote($extraction['groupe']);
+
+                $res = $conn->query($query)->fetchAll(PDO::FETCH_ASSOC);
+
+                if (count($res) > 0)
+                {
+                    $registrationId = $res[0]['registrationIdGroupe'];
+
+                    if (isset($registrationId) && $registrationId != null && $registrationId != '')
+                    {
+                        $apiKey = "AIzaSyDSvom9U4oqQw9HBw4bW1SNpXU5MozNuZQ";
+                        $message = $extraction['notification'];
+                        $url = 'https://android.googleapis.com/gcm/send';
+
+                        // Replace with real client registration IDs
+                        $registrationIDs = array($registrationId);
+
+                        $fields = array(
+                            'registration_ids' => $registrationIDs,
+                            'data' => array( "message" => $message ),
+                        );
+
+                        $headers = array(
+                            'Authorization: key=' . $apiKey,
+                            'Content-Type: application/json'
+                        );
+
+                        $ch = curl_init();
+
+                        curl_setopt($ch, CURLOPT_URL, $url);
+                        curl_setopt($ch, CURLOPT_POST, true);
+                        curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
+                        curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+                        curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
+                        curl_setopt($ch, CURLOPT_POSTFIELDS, json_encode($fields));
+
+                        $result = curl_exec($ch);
+
+                        curl_close($ch);
+                        //echo $result;
+                        //print_r($result);
+                        var_dump($result);
+                    }
+                }
             }
 
         } catch (PDOException $e) {

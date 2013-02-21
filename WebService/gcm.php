@@ -8,6 +8,15 @@
         {
 
         }
+        else if ($type == 'communication' && isset($_GET['destination']))
+        {
+            $destination = $_GET['destination'];
+            $registration = $_GET['registration'];
+
+            $apiKey = "AIzaSyDSvom9U4oqQw9HBw4bW1SNpXU5MozNuZQ";
+            $message = "Push notification test";
+            $url = 'https://android.googleapis.com/gcm/send';
+        }
 
         $apiKey = "AIzaSyDSvom9U4oqQw9HBw4bW1SNpXU5MozNuZQ";
         $message = "Push notification test";
@@ -28,12 +37,12 @@
 
         $ch = curl_init();
 
-        curl_setopt( $ch, CURLOPT_URL, $url );
-        curl_setopt( $ch, CURLOPT_POST, true );
-        curl_setopt( $ch, CURLOPT_HTTPHEADER, $headers);
-        curl_setopt( $ch, CURLOPT_RETURNTRANSFER, true );
+        curl_setopt($ch, CURLOPT_URL, $url);
+        curl_setopt($ch, CURLOPT_POST, true);
+        curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
         curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
-        curl_setopt($ch, CURLOPT_POSTFIELDS, json_encode( $fields ));
+        curl_setopt($ch, CURLOPT_POSTFIELDS, json_encode($fields));
 
         $result = curl_exec($ch);
 
