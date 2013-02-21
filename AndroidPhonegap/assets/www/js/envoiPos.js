@@ -1,4 +1,4 @@
-document.addEventListener("online", appareilPret, false);
+$('#pageIndex').live('pageinit', function(event, data) {appareilPret();});
 
 function appareilPret(){
 	alert("start geoloc");
@@ -8,10 +8,10 @@ function appareilPret(){
 			maximumAge : 3000
 	};
 	
-	navigator.geolocation.watchPosition(succesCallbackSucces, succesCallback, geolocOptions);
+	navigator.geolocation.watchPosition(successCallback, errorCallback, geolocOptions);
 }
 
-function succesCallbackSucces(position) {
+function successCallback(position) {
 	var lat = position.coords.latitude;
 	var lgt = position.coords.longitude;
 	
@@ -23,7 +23,7 @@ function succesCallbackSucces(position) {
 }
 
 
-function succesCallback(error) {
+function errorCallback(error) {
     alert('code: '    + error.code    + '\n' +
           'message: ' + error.message + '\n');
 }

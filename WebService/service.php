@@ -48,8 +48,12 @@
                 if (count($res) > 0)
                     $res = $res[0];
 
-                if ($res != null)
-                    echo json_encode(array_map('utf8_encode', $res));
+                /*if ($res != null)
+                    echo json_encode(array_map('utf8_encode', $res));*/
+
+                $test = utf8_encode('coucou');
+                
+                echo json_encode($test);
             }
             //LISTE GROUPES
             else if ($type == 'listeGroupes' && array_key_exists('enquete', $extraction))
@@ -77,6 +81,12 @@
             else if ($type == 'phpinfo')
             {
                 phpinfo();
+            }
+            else if ($type == 'ajoutEtape' && array_key_exists('nom', $extraction)  && array_key_exists('descriptif', $extraction) && array_key_exists('instruction', $extraction) && array_key_exists('scenario', $extraction))
+            {
+                $query = 'insert into Etape (nomEtape, descriptifEtape, instructionEtape, Scenario_idScenario) values (' . $conn->quote($extraction['nom']) . ', ' . $conn->quote($extraction['descriptif']) . ', ' . $conn->quote($extraction['instruction']) . ', ' . $conn->quote($extraction['scenario']) . ');';
+
+                $res = $conn->exec($query);
             }
 
         } catch (PDOException $e) {
